@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020 kokohuang
+// Copyright (c) 2020 nslog11
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -42,9 +42,8 @@ class OffsetAnimation extends EasyLoadingAnimation {
       begin: _begin,
       end: Offset(0, 0),
     ).animate(controller);
-    double value = controller?.value ?? 0;
     return Opacity(
-      opacity: value,
+      opacity: controller.value,
       child: SlideTransition(
         position: _animation,
         child: child,

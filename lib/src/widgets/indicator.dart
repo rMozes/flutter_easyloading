@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2020 kokohuang
+// Copyright (c) 2020 nslog11
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -28,7 +28,7 @@ import '../theme.dart';
 
 class LoadingIndicator extends StatefulWidget {
   const LoadingIndicator({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -40,8 +40,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator> {
 
   /// indicator color of loading
   final Color _indicatorColor = EasyLoadingTheme.indicatorColor;
-
-  Widget _indicator;
+  late Widget _indicator;
 
   @override
   void initState() {
@@ -50,7 +49,6 @@ class _LoadingIndicatorState extends State<LoadingIndicator> {
 
   @override
   void dispose() {
-    _indicator = null;
     super.dispose();
   }
 
@@ -165,7 +163,7 @@ class _LoadingIndicatorState extends State<LoadingIndicator> {
         );
         break;
       case EasyLoadingIndicatorType.pouringHourGlass:
-        _indicator = SpinKitPouringHourglass(
+        _indicator = SpinKitPouringHourGlass(
           color: _indicatorColor,
           size: _size,
         );
